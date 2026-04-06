@@ -9,31 +9,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Coupe du Monde CAN Maroc",
+    title: "CAN Maroc — Plateforme de la Coupe d'Afrique",
     description:
-      "Développement d'une application web dynamique pour la Coupe d'Afrique des Nations (CAN), offrant aux utilisateurs des informations en temps réel sur les matchs, les détails des équipes et la gestion des billets. Les fonctionnalités incluent l'authentification des utilisateurs, un tableau de bord administratif, et un chatbot pour une assistance interactive, le tout présenté via une interface utilisateur responsive et engageante.",
+      "Les fans n'avaient pas d'endroit centralisé pour suivre les matchs et gérer leurs billets. J'ai construit une app temps réel avec auth, dashboard admin et chatbot intégré.",
     image: "/images/football-soccer-app-dashboard.jpg",
     technologies: [
       "React.js",
       "Node.js",
       "MongoDB",
-      "HTML",
-      "CSS",
-      "JavaScript",
       "Axios",
       "GSAP",
       "React Router DOM",
+      "JavaScript",
     ],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/imadetabaa63",
   },
   {
-    title: "Ebook Store",
+    title: "Ebook Store — Librairie Numérique",
     description:
-      "Développement d'une application web de vente de livres numériques avec interface utilisateur moderne et navigation fluide. Mise en œuvre de l'authentification, recherche de livres, panier et gestion des achats.",
+      "L'achat d'ebooks était fragmenté et peu intuitif. J'ai créé une plateforme unifiée avec recherche, panier, authentification sécurisée et gestion des achats.",
     image: "/images/ebook-store-library-app.jpg",
-    technologies: ["React.js", "Node.js", "MongoDB", "HTML", "CSS", "JavaScript", "React Router DOM"],
+    technologies: ["React.js", "Node.js", "MongoDB", "JavaScript", "React Router DOM"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/imadetabaa63",
   },
 ]
