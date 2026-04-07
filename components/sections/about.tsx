@@ -27,9 +27,11 @@ export function About() {
   }, [])
 
   const skills = {
-    frontend: ["JavaScript", "React.js", "Redux", "Framer Motion", "GSAP", "Tailwind CSS", "SASS", "HTML", "CSS"],
-    backend: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Python"],
-    tools: ["Git", "REST APIs", "JWT Auth", "Deployment"],
+    frontend: ["JavaScript", "React.js", "Redux", "Tailwind CSS", "SASS", "HTML5", "CSS3"],
+    backend: ["Node.js", "Express.js", "Python", "FastAPI", "REST API", "JWT Auth"],
+    databases: ["MongoDB", "PostgreSQL", "MySQL"],
+    tools: ["Git", "GitHub", "n8n Automation", "Déploiement cloud", "Power BI", "Excel avancé"],
+    ai: ["Machine Learning", "Deep Learning", "LLM", "Prompt Engineering"],
   }
 
   const formation = [
@@ -130,7 +132,7 @@ export function About() {
 
               <Card className="hover-lift">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-primary mb-4">Backend & Base de Données</h3>
+                  <h3 className="text-xl font-semibold text-primary mb-4">Backend</h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.backend.map((skill) => (
                       <Badge key={skill} variant="secondary" className="text-sm">
@@ -143,9 +145,35 @@ export function About() {
 
               <Card className="hover-lift">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-primary mb-4">Outils</h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <h3 className="text-xl font-semibold text-primary mb-4">Bases de Données</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.databases.map((skill) => (
+                      <Badge key={skill} variant="secondary" className="text-sm">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover-lift">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-primary mb-4">Outils & DevOps</h3>
+                  <div className="flex flex-wrap gap-2">
                     {skills.tools.map((skill) => (
+                      <Badge key={skill} variant="outline" className="text-sm">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover-lift">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-primary mb-4">IA & Data</h3>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {skills.ai.map((skill) => (
                       <Badge key={skill} variant="outline" className="text-sm">
                         {skill}
                       </Badge>
@@ -153,7 +181,7 @@ export function About() {
                   </div>
                   <h3 className="text-base font-semibold text-primary mb-3">Langues</h3>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="text-sm">Arabe — Courant</Badge>
+                    <Badge variant="outline" className="text-sm">Arabe — Natif</Badge>
                     <Badge variant="outline" className="text-sm">Français — Intermédiaire</Badge>
                     <Badge variant="outline" className="text-sm">Anglais — Intermédiaire</Badge>
                   </div>
