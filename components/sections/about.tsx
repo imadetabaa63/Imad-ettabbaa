@@ -147,7 +147,7 @@ export function About() {
   ]
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 bg-muted/30">
+    <section id="about" ref={sectionRef} className="py-20 section-gradient-top relative">
       <div className="container mx-auto px-4">
         <div className={`transition-all duration-1000 ${isVisible ? "slide-up" : "opacity-0"}`}>
 

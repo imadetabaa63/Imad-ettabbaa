@@ -42,7 +42,7 @@ export function Projects() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="group hover-lift overflow-hidden flex flex-col">
+              <Card key={index} className="group hover-lift overflow-hidden flex flex-col glass-card" style={{ border: "1px solid rgba(130,69,236,0.2)" }}>
                 <div className="relative overflow-hidden h-48">
                   <Image
                     src={project.image || "/placeholder.svg"}

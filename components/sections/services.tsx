@@ -65,7 +65,7 @@ export function Services() {
   ]
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 bg-muted/30">
+    <section id="services" ref={sectionRef} className="py-20 section-gradient-top relative">
       <div className="container mx-auto px-4">
         <div className={`transition-all duration-1000 ${isVisible ? "slide-up" : "opacity-0"}`}>
           <div className="text-center mb-16">
@@ -77,9 +77,9 @@ export function Services() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover-lift text-center">
+              <Card key={index} className="hover-lift text-center glass-card" style={{ border: "1px solid rgba(130,69,236,0.2)" }}>
                 <CardHeader>
-                  <div className="mx-auto mb-4 p-3 bg-secondary/10 rounded-full w-fit text-secondary">
+                  <div className="mx-auto mb-4 p-3 rounded-full w-fit" style={{ background: "rgba(130,69,236,0.12)", color: "#8245ec" }}>
                     {service.icon}
                   </div>
                   <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
