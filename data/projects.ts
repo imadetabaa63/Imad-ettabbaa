@@ -2,10 +2,12 @@ export interface Project {
   title: string
   description: string
   image: string
+  images?: string[]           // galerie de screenshots
   technologies: string[]
   liveUrl: string
   githubUrl: string
   category: "web" | "automation" | "ai"
+  features?: string[]         // fonctionnalités clés
 }
 
 export const projects: Project[] = [
@@ -18,6 +20,7 @@ export const projects: Project[] = [
     liveUrl: "#",
     githubUrl: "https://github.com/imadetabaa63",
     category: "web",
+    features: ["Authentification utilisateurs", "Dashboard admin", "Chatbot interactif", "Interface responsive"],
   },
   {
     title: "Ebook Store — Plateforme E-commerce Livres Numériques",
@@ -28,9 +31,10 @@ export const projects: Project[] = [
     liveUrl: "#",
     githubUrl: "https://github.com/imadetabaa63",
     category: "web",
+    features: ["Authentification sécurisée", "Recherche de livres", "Panier d'achat", "Gestion des commandes"],
   },
   {
-    title: "CRM Automatisé — Campagnes Email depuis Base de Données",
+    title: "CRM Automatisé — Campagnes Email B2B",
     description:
       "Les relances clients étaient manuelles et chronophages. J'ai automatisé l'extraction de contacts, la génération de messages dynamiques et les envois via Gmail API avec suivi des statuts.",
     image: "/images/football-soccer-app-dashboard.jpg",
@@ -38,15 +42,28 @@ export const projects: Project[] = [
     liveUrl: "#",
     githubUrl: "https://github.com/imadetabaa63",
     category: "automation",
+    features: ["Extraction automatique des contacts", "Génération de messages dynamiques", "Envoi via Gmail API", "Suivi des statuts"],
   },
   {
-    title: "Automatisation Bulletins de Paie via WhatsApp",
+    title: "Automatisation Fiches de Paie via WhatsApp",
     description:
-      "L'envoi manuel des bulletins de paie prenait des heures chaque mois. J'ai construit un workflow qui récupère les données, génère les PDFs et les envoie automatiquement à chaque employé sur WhatsApp.",
-    image: "/images/ebook-store-library-app.jpg",
-    technologies: ["n8n", "WhatsApp Business API", "PDF Generation", "PostgreSQL", "Webhooks"],
+      "Le service RH envoyait manuellement chaque bulletin de paie — des heures perdues chaque mois. J'ai conçu un workflow n8n qui détecte automatiquement les PDFs dans Google Drive, retrouve le numéro WhatsApp de chaque employé via Google Sheets, et envoie les documents sans aucune intervention manuelle.",
+    image: "/images/paie-workflow.png",
+    images: [
+      "/images/paie-workflow.png",
+      "/images/paie-drive.png",
+      "/images/paie-sheets.png",
+    ],
+    technologies: ["n8n", "Google Drive", "Google Sheets", "WhatsApp API", "JavaScript"],
     liveUrl: "#",
     githubUrl: "https://github.com/imadetabaa63",
     category: "automation",
+    features: [
+      "Détection automatique des PDFs (Google Drive)",
+      "Association employé → numéro WhatsApp (Google Sheets)",
+      "Envoi automatique document par document",
+      "Archivage post-envoi",
+      "Vérification des données avant envoi",
+    ],
   },
 ]
