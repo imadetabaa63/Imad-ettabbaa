@@ -60,14 +60,14 @@ export function Hero() {
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-6 text-balance max-w-3xl mx-auto font-medium">
-            Je construis des applications web complètes avec{" "}
-            <span style={{ color: "#8245ec" }}>React & Node.js</span>
-            {" "}— de l&apos;idée au déploiement.
+            <span style={{ color: "#8245ec" }}>Développeur Full-Stack</span>
+            {" "}|{" "}
+            <span style={{ color: "#a855f7" }}>IA & Automatisation</span>
           </p>
 
           <p className="text-base text-muted-foreground mb-12 max-w-2xl mx-auto text-pretty leading-relaxed">
-            Développeur Full-Stack MERN passionné par la création d&apos;applications performantes et évolutives.
-            JavaScript, React, Node.js, MongoDB, PostgreSQL — je couvre l&apos;ensemble de la stack.
+            Passionné par la création d&apos;applications web performantes et l&apos;intégration de l&apos;Intelligence Artificielle
+            dans des solutions concrètes. React.js, Node.js, Python, n8n — de l&apos;idée au déploiement.
           </p>
 
           {/* Social Links */}

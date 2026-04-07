@@ -1,8 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Code, Database, Globe, Smartphone, Zap, Users } from "lucide-react"
+import { Code, Database, Globe, Zap, Bot, BarChart3 } from "lucide-react"
 
 export function Services() {
   const [isVisible, setIsVisible] = useState(false)
@@ -10,57 +9,49 @@ export function Services() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true) },
       { threshold: 0.1 },
     )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
 
   const services = [
     {
-      icon: <Globe className="h-8 w-8" />,
+      icon: <Globe className="h-7 w-7" />,
       title: "Développement Full-Stack",
       description:
-        "Développement complet d'applications web utilisant la pile MERN (MongoDB, Express.js, React, Node.js) avec les meilleures pratiques modernes.",
+        "Applications web complètes avec la stack MERN (MongoDB, Express.js, React, Node.js). De la base de données à l'interface, sans silos.",
     },
     {
-      icon: <Code className="h-8 w-8" />,
+      icon: <Code className="h-7 w-7" />,
       title: "Développement Frontend",
       description:
-        "Interfaces utilisateur responsives et interactives utilisant React.js, Redux, et des frameworks CSS modernes comme Tailwind CSS.",
+        "Interfaces modernes, responsives et performantes avec React.js, Redux et Tailwind CSS. Animations GSAP et Framer Motion incluses.",
     },
     {
-      icon: <Database className="h-8 w-8" />,
-      title: "Développement Backend",
+      icon: <Database className="h-7 w-7" />,
+      title: "Backend & APIs REST",
       description:
-        "Applications côté serveur robustes avec Node.js, Express.js, APIs RESTful, et intégration de base de données.",
+        "Serveurs robustes avec Node.js / Express.js ou Python / FastAPI, authentification JWT, et intégration de bases de données SQL / NoSQL.",
     },
     {
-      icon: <Smartphone className="h-8 w-8" />,
-      title: "Design Responsive",
+      icon: <Zap className="h-7 w-7" />,
+      title: "Automatisation n8n",
       description:
-        "Approche mobile-first garantissant que votre site web soit parfait sur tous les appareils et tailles d'écran.",
+        "Workflows métier automatisés avec n8n : CRM, emailing B2B, relances, synchronisation de données entre Gmail, Sheets, Webhooks et bases de données.",
     },
     {
-      icon: <Zap className="h-8 w-8" />,
-      title: "Optimisation des Performances",
+      icon: <Bot className="h-7 w-7" />,
+      title: "Intégration IA & LLM",
       description:
-        "Applications rapides et optimisées avec les meilleures pratiques pour le SEO et l'expérience utilisateur.",
+        "Intégration de modèles de langage (LLM) dans vos applications, chatbots intelligents, génération de contenu et Prompt Engineering sur mesure.",
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Consultation & Support",
+      icon: <BarChart3 className="h-7 w-7" />,
+      title: "Data & Visualisation",
       description:
-        "Consultation technique, révision de code, et support continu pour vos projets de développement web.",
+        "Analyse de données, dashboards Power BI et Excel avancé. Mise en place de pipelines de données pour piloter vos décisions métier.",
     },
   ]
 
@@ -70,24 +61,38 @@ export function Services() {
         <div className={`transition-all duration-1000 ${isVisible ? "slide-up" : "opacity-0"}`}>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Services complets de développement web pour donner vie à vos idées
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Du développement web à l&apos;automatisation IA — des solutions techniques à fort impact
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="hover-lift text-center glass-card" style={{ border: "1px solid rgba(130,69,236,0.2)" }}>
-                <CardHeader>
-                  <div className="mx-auto mb-4 p-3 rounded-full w-fit" style={{ background: "rgba(130,69,236,0.12)", color: "#8245ec" }}>
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed text-pretty">{service.description}</p>
-                </CardContent>
-              </Card>
+              <div
+                key={index}
+                className="hover-lift rounded-xl p-6 text-center transition-all duration-300 group"
+                style={{
+                  background: "rgba(130,69,236,0.04)",
+                  border: "1px solid rgba(130,69,236,0.15)",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(130,69,236,0.4)"
+                  ;(e.currentTarget as HTMLDivElement).style.background = "rgba(130,69,236,0.08)"
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(130,69,236,0.15)"
+                  ;(e.currentTarget as HTMLDivElement).style.background = "rgba(130,69,236,0.04)"
+                }}
+              >
+                <div
+                  className="mx-auto mb-4 p-3 rounded-full w-fit transition-all duration-300"
+                  style={{ background: "rgba(130,69,236,0.12)", color: "#8245ec" }}
+                >
+                  {service.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{service.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+              </div>
             ))}
           </div>
         </div>
